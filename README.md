@@ -23,10 +23,10 @@
 - [Освобождение памяти OOM-жертвы](https://github.com/torvalds/linux/blob/v6.12/mm/oom_kill.c#L617-L654)
 
 ---
-## Сборка проекта
+### Сборка проекта
 ---
 
-# Рендеринг сцен
+Рендеринг сцен
 
 ```bash
 manim -qh scenes/scene_01_normal.py Scene01Normal
@@ -37,7 +37,7 @@ manim -qh scenes/scene_05_kill.py Scene05Kill
 manim -qh scenes/scene_06_recovery.py Scene06Recovery
 ```
 
-# Сборка итогового видео
+Сборка итогового видео
 
 ```bash
 ffmpeg -y -f concat -safe 0 -i videos.txt \
