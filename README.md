@@ -21,3 +21,25 @@
 - [Выбор процесса с максимальной оценкой](https://github.com/torvalds/linux/blob/v6.12/mm/oom_kill.c#L289-L356)
 - [Принудительное завершение процесса сигналом](https://github.com/torvalds/linux/blob/v6.12/mm/oom_kill.c#L879-L895)
 - [Освобождение памяти OOM-жертвы](https://github.com/torvalds/linux/blob/v6.12/mm/oom_kill.c#L617-L654)
+
+---
+## Сборка проекта
+---
+
+# Рендеринг сцен
+
+```bash
+manim -qh scenes/scene_01_normal.py Scene01Normal
+manim -qh scenes/scene_02_growth.py Scene02Growth
+manim -qh scenes/scene_03_pressure.py Scene03Pressure
+manim -qh scenes/scene_04_selection.py Scene04Selection
+manim -qh scenes/scene_05_kill.py Scene05Kill
+manim -qh scenes/scene_06_recovery.py Scene06Recovery
+```
+
+# Сборка итогового видео
+
+```bash
+ffmpeg -y -f concat -safe 0 -i videos.txt \
+    -c copy final_oom_killer.mp4
+```
