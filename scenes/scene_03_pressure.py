@@ -1,3 +1,4 @@
+
 from manim import *
 try:
     from .oom_memory import *
@@ -84,16 +85,11 @@ class Scene03Pressure(Scene):
         self.play(token.animate.move_to(page),run_time=.5)
         self.remove(token)
 
-        # Оценка возможности дальнейшего reclaim: символически, без выдуманного порога.
-        check = VGroup(txt('Свободно + можно освободить',-3.25,-2.40,17,MUTED),
-                       txt('< порога зоны',-3.25,-2.78,20,RED,True))
-        self.play(FadeIn(check),Indicate(swap[1],color=ORANGE),run_time=.9)
-        self.wait(1.5)
         warning = RoundedRectangle(width=5.1,height=.72,corner_radius=.12,
                                    stroke_color=RED,stroke_width=2.5,fill_color='#FCE8E6',fill_opacity=1)
         warning.move_to([0,-3.32,0])
         warning_text = txt('!  OUT OF MEMORY',0,-3.32,26,RED,True)
-        self.play(FadeOut(check),FadeOut(cross),FadeOut(caption),
+        self.play(FadeOut(cross),FadeOut(caption),
                   target.animate.set_stroke('#CAD3DF',width=1),
                   FadeIn(warning),FadeIn(warning_text),run_time=.9)
         self.play(Indicate(warning,color=RED,scale_factor=1.03),run_time=.7)

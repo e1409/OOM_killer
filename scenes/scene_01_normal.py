@@ -30,7 +30,7 @@ class Scene01Normal(Scene):
                 heap[1][i].get_right(),
                 blocks[8+i].get_left(),
                 buff=.06,
-                color=TEAL,
+                color=BLACK,
                 stroke_width=2.5
             )
             self.play(

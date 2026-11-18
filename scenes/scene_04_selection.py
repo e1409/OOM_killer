@@ -164,10 +164,4 @@ class Scene04Selection(Scene):
             run_time=1.0
         )
 
-        self.play(
-            FadeIn(status('Максимум → worker.py', RED)),
-            run_time=.6
-        )
-
         self.wait(2)
-
